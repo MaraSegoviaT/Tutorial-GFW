@@ -1,3 +1,4 @@
+#CONFIGURACIÓN GFW
 install.packages("devtools")
 install.packages("usethis")
 library(devtools)
@@ -18,22 +19,24 @@ usethis::edit_r_environ()
 #Coger la llave como objeto desde el R enviroment
 key <- gfw_auth()
 
-library(gfwr)
 
-library(usethis)
+
+install.packages("githubinstall")
+library(gitcreds)
+library(githubinstall)
+
+gitcreds_set()
+
+git config --global user.name "MaraSegoviaT"
+git config --global user.email "marasegoviat@gmail.com"
+
+#CONFIGURACIÓN GIT
 git_sitrep()
 
-usethis::create_github_token()
+git_usethis::create_github_token()
 #  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
 gitcreds::gitcreds_set()
 
 gh_token_help()
 create_github_token()
 
-
-# load the key as object directly from the R environment
-
-# library(gfwr)
-key <- gfw_auth()
-# or
-key <- Sys.getenv("GFW_TOKEN")
