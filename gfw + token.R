@@ -27,8 +27,9 @@ library(githubinstall)
 
 gitcreds_set()
 
-git config --global user.name "MaraSegoviaT"
-git config --global user.email "marasegoviat@gmail.com"
+#Meter credenciales de GitHub en GitBash
+#git config --global user.name "MaraSegoviaT"
+#git config --global user.email "marasegoviat@gmail.com"
 
 #CONFIGURACIÓN GIT
 git_sitrep()

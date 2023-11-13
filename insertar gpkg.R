@@ -64,3 +64,14 @@ head(drifting_longlines_cies)
 
 
 
+#Para obtener un listado de los vessel_id de barcos utilizando los API de Global Fishing Watch y restringiendo el área con un archivo geopackage, necesitarás seguir estos pasos:
+  
+#1. Importa el archivo geopackage a un sistema de información geográfica (SIG) compatible, como QGIS o ArcGIS.
+#2. Abre el archivo geopackage en el SIG y visualiza el área geográfica que deseas restringir.
+#3. Utiliza las herramientas de análisis espacial del SIG para obtener la geometría del área geográfica restringida.
+#4. Exporta la geometría resultante a un formato compatible con los API de Global Fishing Watch, como GeoJSON o WKT.
+
+#Una vez que tengas la geometría restringida, puedes utilizar los API de Global Fishing Watch para obtener el listado de vessel_id de los barcos dentro de esa área. Puedes hacerlo utilizando las siguientes API endpoints:
+  
+#- Utiliza el endpoint `/vessels` para obtener información general sobre los barcos, incluyendo sus vessel_id.
+#- Utiliza el endpoint `/vessels/{vessel_id}/tracks` para obtener los tracks de un barco específico.
