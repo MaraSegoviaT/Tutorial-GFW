@@ -43,7 +43,7 @@ get_raster(spatial_resolution = 'low',
            key = key)
 
 # use EEZ function to get EEZ code of Cote d'Ivoire
-code_eez <- get_region_id(region_name = 'CIV', region_source = 'eez', key = key)
+code_eez <- get_region_id(region_name = 'ESP', region_source = 'eez', key = key)
 get_raster(spatial_resolution = 'low',
            temporal_resolution = 'yearly',
            group_by = 'flag',
@@ -74,10 +74,10 @@ get_raster(spatial_resolution = 'low',
            key = key)
 
 code_mpa0 <- get_region_id(region_name = 'Cabrera', region_source = 'mpa', key = key)
-datos_cabrera_flag <- get_raster(spatial_resolution = 'low',
+datos_cabrera_flag_15 <- get_raster(spatial_resolution = 'low',
                                  temporal_resolution = 'yearly',
-                                 group_by = 'flag',
-                                 date_range = '2021-01-01,2021-12-01',
+                                 group_by = 'vessel_id',
+                                 date_range = '2015-01-01,2015-12-01',
                                  region = code_mpa0$id[1],
                                  region_source = 'mpa',
                                  key = key)
@@ -86,7 +86,7 @@ head(datos_cabrera_flag)
 code_mpa1 <- get_region_id(region_name = 'Illas Atlánticas de Galicia', region_source = 'mpa', key = key)
 get_raster(spatial_resolution = 'low',
            temporal_resolution = 'yearly',
-           group_by = 'gearType',
+           group_by = 'vessel_id',
            date_range = '2015-01-01,2015-06-01',
            region = code_mpa1$id[1],
            region_source = 'mpa',
@@ -96,7 +96,7 @@ code_mpa2 <- get_region_id(region_name = 'Illa Cíes', region_source = 'mpa', ke
 datos_cies_geartype <- get_raster(spatial_resolution = 'low',
                                   temporal_resolution = 'yearly',
                                   group_by = 'vessel_id',
-                                  date_range = '2015-01-01,2015-06-01',
+                                  date_range = '2022-01-01,2022-06-01',
                                   region = code_mpa2$id[1],
                                   region_source = 'mpa',
                                   key = key)

@@ -1,10 +1,11 @@
 install.packages("sf")
 library(sf)
 
-#Cargar el archivo GeoPackage
+#Cargar el archivo GeoPackage una vez subido a RStudio Cloud
 zona_estudio_cabrera <- st_read("areapncabrera.gpkg") 
 zona_estudio_cies <- st_read("areapncies.gpkg")
 
+#Set path para archivos en escritorio
 
 
 #Puedo conseguir la lista de vessels ID de un tipo determinado de barco? 
