@@ -1,7 +1,11 @@
-
 WD <- 'D:\\SML\\GFW\\GFW Descargable\\Download 2020'
 
 fishing_vessels <- read_csv('D:\\SML\\GFW\\GFW Descargable\\Download 2020\\fishing-vessels-v2.csv')
+
+
+
+
+
 
 #DEFINIR WORKFLOW PARA SACAR LISTADO DE MMSI PARA 1 DÍA DE 1 AÑO DENTRO DE POLIGONO
 
