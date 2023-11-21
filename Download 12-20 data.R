@@ -1,6 +1,3 @@
-dir.create("output")
-dir.create("img")
-
 
 WD <- 'D:\\SML\\GFW\\GFW Descargable\\Download 2020'
 
