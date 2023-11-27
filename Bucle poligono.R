@@ -20,7 +20,7 @@ MMSI_Cabrera <- list()
 
 #Bucle para procesar cada archivo CSV
 for (archivo_csv in archivos_mmsi_csv) {
-  MMSI_01_01_2020 <- read.csv('D:\\SML\\GFW\\GFW Descargable\\Download 2020\\MMSI_2012-2020\\mmsi-daily-csvs-10-v2-2020\\2020-01-01.csv')
+  MMSI_01_01_2020 <- read.csv(archivo_csv)
   
   #######Aplica tu proceso o analisis a los datos 
   
