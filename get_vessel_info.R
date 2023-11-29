@@ -3,7 +3,7 @@ library(gfwr)
 key <- gfw_auth()
 
 # Lee tu data frame original desde el archivo CSV
-df_mmsi <- read.csv("D:\\SML\\PNMT_CABRERA\\mmsi_cabrera_2020.csv")
+df_mmsi <- read.csv("D:\\SML\\PNMT_CABRERA\\mmsi_cabrera_2019.csv")
 
 # Inicializa un vector para almacenar la información obtenida
 info_vessel <- list()
@@ -22,4 +22,4 @@ for (mmsi in df_mmsi$mmsi) {
 }
 
 info_df <- do.call(rbind, info_vessel)
-write.csv(info_df, 'D:\\SML\\PNMT_CABRERA\\cabrera_2020_info.csv', row.names = FALSE)
+write.csv(info_df, 'D:\\SML\\PNMT_CABRERA\\cabrera_2019_info.csv', row.names = FALSE)

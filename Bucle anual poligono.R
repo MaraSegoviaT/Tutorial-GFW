@@ -37,15 +37,14 @@ for (archivo_csv in archivos_mmsi_csv_2020) {
   MMSI_Cabrera_2020[[archivo_csv]] <- MMSI_01_01_2020_cabrera
 }
 
-MMSI_Cabrera <- do.call(rbind, MMSI_Cabrera_2020)
-
+MMSI_Cabrera_2020_comb <- do.call(rbind, MMSI_Cabrera_2019)
 
 ##EXPORTAR DATOS DE ESE AÑO
 MMSI_Cabrera_2020_comb$geometry <- NULL
 
 # Exportar a CSV
-sf::st_write(MMSI_Cabrera_2020_comb, 'D:\\SML\\PNMT_CABRERA\\MMSI_Cabrera_2020.csv', driver = 'CSV')
+sf::st_write(MMSI_Cabrera_2019_comb, 'D:\\SML\\PNMT_CABRERA\\MMSI_Cabrera_2019.csv', driver = 'CSV')
 
 # Opcional: Exportar a GeoJSON
-sf::st_write(MMSI_Cabrera_2020_comb, 'D:\\SML\\PNMT_CABRERA\\MMSI_Cabrera_2020.geojson', driver = 'GeoJSON')
+sf::st_write(MMSI_Cabrera_2019_comb, 'D:\\SML\\PNMT_CABRERA\\MMSI_Cabrera_2019.geojson', driver = 'GeoJSON')
 
