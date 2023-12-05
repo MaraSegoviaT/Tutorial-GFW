@@ -4,22 +4,24 @@ library(tools)
 
 #GENERAR BUCLE PARA TODOS LISTAR TODOS LOS MMSI DE TODOS LOS DÍAS DE 2019 EN CABRERA
 #Documento con polígono
-area_cabrera_original <- st_read('D:\\SML\\GFW\\GFW Descargable\\Download 2020\\areapncabrera.gpkg', quiet = TRUE)
-area_cabrera <- st_transform(area_cabrera_original, crs = 4326)
+#area_cabrera_original <- st_read('D:\\SML\\GFW\\GFW Descargable\\Download 2020\\areapncabrera.gpkg', quiet = TRUE)
+#area_cabrera <- st_transform(area_cabrera_original, crs = 4326)
+area_cies_original <- st_read('D:\\SML\\PNMT_CIES\\areapncies.gpkg', quiet = TRUE)
+area_cies <- st_transform(area_cies_original, crs = 4326)
+
 
 #Carpeta que contiene los días de ese año
-carpeta_datos_2017 <- 'D:\\SML\\GFW\\GFW Descargable\\Download 2020\\MMSI_2012-2020\\mmsi-daily-csvs-10-v2-2012'
-
+carpeta_datos_año <- 'D:\\SML\\GFW\\GFW Descargable\\Download 2020\\MMSI_2012-2020\\mmsi-daily-csvs-10-v2-2020'
 
 
 #Obten la lista de archivos CSV en la carpeta principal y sus subcarpetas
-archivos_mmsi_csv_2017 <- list.files(path = carpeta_datos_2017, pattern = "\\.csv$", recursive = TRUE, full.names = TRUE)
+archivos_mmsi_csv_año <- list.files(path = carpeta_datos_año, pattern = "\\.csv$", recursive = TRUE, full.names = TRUE)
 
 #Inicia una lista para almacenar los resultados de cada archivo
 lista <- list()
 
 #Bucle para procesar cada archivo CSV
-for (archivo_csv in archivos_mmsi_csv_2017) {
+for (archivo_csv in archivos_mmsi_csv_año) {
   archivo <- read.csv(archivo_csv)
   
   #######Aplica tu proceso o analisis a los datos 
@@ -55,5 +57,4 @@ columnas_utiles <- c("date", "mmsi", "hours", "fishing_hours")
 df_limpio <- data_frame_sin_sf[, columnas_utiles]
 
 
-write.csv(df_limpio, 'D:\\SML\\PNMT_CABRERA\\mmsi_cabrera_2012.csv', row.names = FALSE)
-
+write.csv(df_limpio, 'D:\\SML\\PNMT_CIES\\mmsi_cies_2020.csv', row.names = FALSE)
