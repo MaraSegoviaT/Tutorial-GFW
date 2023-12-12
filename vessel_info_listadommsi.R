@@ -6,7 +6,7 @@ library(gfwr)
 key <- gfw_auth()
 
 # Lee tu data frame original desde el archivo CSV
-mmsi_unicos_cabrera <- read.csv("D:\\SML\\PNMT_CIES\\mmsi_unicos_cies.csv")
+mmsi_unicos_cabrera <- read.csv("D:\\SML\\PNMT_CABRERA\\mmsi_unicos_cabrera.csv")
 
 # Inicializa un vector para almacenar la información obtenida
 info_vessel <- list()
@@ -32,4 +32,4 @@ mmsi_unicos_cabrera <- mmsi_unicos_cabrera %>%
   mutate(mmsi = as.character(mmsi))
 
 str(info_df)
-write.csv(info_df, 'D:\\SML\\PNMT_CABRERA\\mmsi_unicos_cies_info.csv', row.names = FALSE)
+write.csv(info_df, 'D:\\SML\\PNMT_CABRERA\\mmsi_unicos_cabrera_info.csv', row.names = FALSE)

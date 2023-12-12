@@ -21,23 +21,6 @@ key <- gfw_auth()
 
 
 
-install.packages("githubinstall")
-library(gitcreds)
-library(githubinstall)
-
-gitcreds_set()
-
-#Meter credenciales de GitHub en GitBash
-#git config --global user.name "MaraSegoviaT"
-#git config --global user.email "marasegoviat@gmail.com"
-
-#CONFIGURACIÓN GIT
-git_sitrep()
-
-git_usethis::create_github_token()
-#  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
-gitcreds::gitcreds_set()
-
-gh_token_help()
-create_github_token()
-
+library(usethis)
+edit_git_config()
+use_git()
